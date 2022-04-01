@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<title> Atividade PW- Switch Case </title>
+	<style type="text/css">
+		.pai{
+			background-color: white;
+          
+		}
+	    .botao {
+		width: 600px;
+		height: 50px;
+		font-size: 20px;
+		border-radius: 8px;
+        color: black; 
+        border: 4px solid green;
+        }
+        .botao:hover {
+        background-color: white;
+        color: green;
+        }
+        #botaoSelecionado{
+        	width: 500px;
+        	height: 60px;
+            background-color: darkgray;
+            border: 3px solid gray;
+
+        }
+        #botaoSelecionado:hover {
+        color: white;
+        background-color: green ;
+
+        }
+
+        .maria{
+        	display: none;
+        }
+
+        .stephane{
+        	display: block;
+        	background-color: blue;
+        	font-size: 21px;
+        }
+        
+	</style>
+</head>
+<body>
+	<div class="pai">
+
+		<center> <h1> Orientações contra o COVID-19 </h1> </center>
+
+		<form>
+		<center> <br> <input type="button" value="Você é idoso?" class="botao" onclick="pegarDados('Você é idoso?');"></center>
+		<center> <br> <input type="button" value="Você sofre de problemas respiratórios? " class="botao" onclick="pegarDados('Sofre de problemas respiratórios?');"></center>
+		<center> <br> <input type="button" value="Você é diabético? " class="botao" onclick="pegarDados('Você é diabético?');"></center>
+		<center> <br> <input type="button" value="Você tem uma boa saúde??" class="botao" onclick="pegarDados('Você tem uma boa saúde?');"></center> <br>
+		</form>
+
+    </div>
+    <center><p class="maria" id="botaoSelecionado"></p></center>
+    <script type="text/javascript">
+    	function pegarDados (qualBotao) {
+        switch (qualBotao) {
+        case 'Você é idoso?':{
+        let div = document.getElementById("botaoSelecionado");
+        div.classList.remove("maria");
+        div.classList.add("stephane");
+        document.getElementById("botaoSelecionado").innerHTML = "Já que você respondeu que é idoso, fique em casa e peça para fazerem as compras para você!";
+        break;
+        }
+        case 'Você sofre de problemas respiratórios?':{
+        let div = document.getElementById("botaoSelecionado");
+        div.classList.remove("maria");
+        div.classList.add("stephane");
+        document.getElementById("botaoSelecionado").innerHTML = "Já que você respondeu que sofre de problemas respiratórios, fique em casa, tome sol e bastante água e faça exercícios leves!";
+        break;
+        }
+        case 'Você é diabético?':{
+        let div = document.getElementById("botaoSelecionado");
+        div.classList.remove("maria");
+        div.classList.add("stephane");
+        document.getElementById("botaoSelecionado").innerHTML = "Já que você respondeu que é diabético, fique em casa e cuide da sua saúde!";
+        break;
+        }
+        case 'Você tem uma boa saúde?':{
+        let div = document.getElementById("botaoSelecionado");
+        div.classList.remove("maria");
+        div.classList.add("stephane");
+        document.getElementById("botaoSelecionado").innerHTML = "Já que você respondeu que tem uma boa saúde, faça compras pelos mais idosos, mas use máscaras!";
+        break;
+        }
+        default:
+        document.getElementById("botaoSelecionado").innerHTML = "erro";
+    }
+}
+    </script>
+</body>
+</html>
